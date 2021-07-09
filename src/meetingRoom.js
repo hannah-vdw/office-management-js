@@ -13,4 +13,12 @@ class MeetingRoom {
     return this.roomAvailable
   }
 
+  bookRoom() {
+    this.roomAvailable = false
+  }
+
+  leaveRoom() {
+    this.roomAvailable = true
+  }
+
 }

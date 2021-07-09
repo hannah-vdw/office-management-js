@@ -16,4 +16,18 @@ describe("MeetingRoom", () => {
     expect(room1.isRoomAvailable()).toBe(true)
   })
 
+  describe("bookRoom", () => {
+    it("makes room unavailable", () => {
+      room1.bookRoom()
+      expect(room1.isRoomAvailable()).toBe(false)
+    })
+  })
+
+  describe("leaveRoom", () => {
+    it("makes room available", () => {
+      room1.bookRoom()
+      room1.leaveRoom()
+      expect(room1.isRoomAvailable()).toBe(true)
+    })
+  })
 })
