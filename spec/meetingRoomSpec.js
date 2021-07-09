@@ -17,9 +17,16 @@ describe("MeetingRoom", () => {
   })
 
   describe("bookRoom", () => {
-    it("makes room unavailable", () => {
+    beforeEach(() => {
       room1.bookRoom()
+    })
+
+    it("makes room unavailable", () => {
       expect(room1.isRoomAvailable()).toBe(false)
+    })
+
+    it("throws an error if user tried to book same room twice", () => {
+      expect(() => { room1.bookRoom() }).toThrowError('Room is already in use')
     })
   })
 
@@ -30,4 +37,5 @@ describe("MeetingRoom", () => {
       expect(room1.isRoomAvailable()).toBe(true)
     })
   })
+
 })

@@ -14,7 +14,11 @@ class MeetingRoom {
   }
 
   bookRoom() {
-    this.roomAvailable = false
+    if (this.isRoomAvailable()) {
+      this.roomAvailable = false
+    } else {
+      throw new Error('Room is already in use')
+    }
   }
 
   leaveRoom() {
