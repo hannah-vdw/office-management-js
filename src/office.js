@@ -12,9 +12,7 @@ class Office {
     this.meetingRooms.push(room)
   }
 
-  isAvailableRooms() {
+  listAvailableRooms() {
     return this.meetingRooms.filter(item => item.isRoomAvailable())
   }
-
-
 }
